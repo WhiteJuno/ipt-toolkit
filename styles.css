@@ -1,0 +1,178 @@
+/* Estilo general del body */
+body {
+    background-color: #121212; /* Color de fondo oscuro */
+    color: #e0e0e0; /* Color de texto claro */
+    font-family: 'Fira Code', monospace; /* Fuente Fira Code */
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 1.5rem; /* Tamaño pequeño */
+    color: #ffffff; /* Color blanco para modo oscuro */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-family: 'Fira Code', monospace; /* Fuente Fira Code */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e; /* Fondo del contenedor */
+}
+
+/* Estilo para la lista final */
+#lista-final {
+    white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
+    border: 1px solid #444; /* Bordes sutiles */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #2a2a2a; /* Fondo de la lista */
+}
+
+/* Botones */
+button {
+    background-color: #7228d9; /* Color del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100px;
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+button:hover {
+    background-color: #442b7f; /* Color al pasar el mouse */
+}
+
+/* Estilo para la lista de opciones */
+.opcion {
+    display: inline-block;
+    background-color: #3a3a3a; /* Fondo de cada opción */
+    color: #ffffff; /* Color de texto de las opciones */
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para la lista de opciones */
+.opciones-lista {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilo para cada opción */
+.opciones-lista .opcion {
+    display: block; /* Cada opción en una nueva línea */
+    background-color: #3a3a3a; /* Fondo de cada opción */
+    color: #ffffff; /* Color de texto de las opciones */
+    padding: 7px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 5px 0; /* Margen entre opciones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para las opciones */
+.opciones-lista .opcion:hover {
+    background-color: #575757; /* Color al pasar el mouse */
+}
+
+/* Aseguramos que todas las opciones tengan el mismo ancho */
+.opciones-lista .opcion {
+    width: 20%; /* Ancho completo */
+}
+/* Estilo general para el contenedor */
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre columnas */
+    align-items: flex-start; /* Alinear las columnas al inicio */
+    height: 100vh; /* Altura completa de la vista */
+    padding: 20px; /* Espaciado interno */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilos para cada columna */
+.column {
+    text-align: center; /* Centra el contenido dentro de la columna */
+}
+
+#calendario-column {
+    flex: 0 0 20%;
+}
+
+#opciones-column {
+    flex: 0 0 20%;
+}
+
+#lista-column {
+    flex: 0 0 350px;
+    text-align:start
+}
+
+/* Estilo para el calendario */
+#calendario {
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #444; /* Bordes */
+    background: #2a2a2a; /* Fondo del campo */
+    color: #e0e0e0; /* Color de texto */
+}
+
+/* Estilo para la lista final */
+#lista-final {
+    white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
+    border: 1px solid #444; /* Bordes sutiles */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #2a2a2a; /* Fondo de la lista */
+}
+
+/* Estilo para la lista de opciones */
+.opciones-lista {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilo para cada opción */
+.opciones-lista .opcion {
+    display: block; /* Cada opción en una nueva línea */
+    background-color: #3a3a3a; /* Fondo de cada opción */
+    color: #ffffff; /* Color de texto de las opciones */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    margin: 5px 0; /* Margen entre opciones */
+    text-align: start; /* Centra el texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para las opciones */
+.opciones-lista .opcion:hover {
+    background-color: #575757; /* Color al pasar el mouse */
+}
+
+/* Aseguramos que todas las opciones tengan el mismo ancho */
+.opciones-lista .opcion {
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo para los botones en la lista */
+.botones {
+    margin-top: 10px; /* Espacio encima de los botones */
+}
+
