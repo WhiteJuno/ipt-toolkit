@@ -159,20 +159,11 @@ button:hover {
     text-align: start; /* Centra el texto */
     cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
     transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Efecto hover para las opciones */
-.opciones-lista .opcion:hover {
-    background-color: #575757; /* Color al pasar el mouse */
-}
-
-/* Aseguramos que todas las opciones tengan el mismo ancho */
-.opciones-lista .opcion {
     width: 100%; /* Ancho completo */
 }
 
-/* Estilo para los botones en la lista */
 .botones {
-    margin-top: 10px; /* Espacio encima de los botones */
+    margin-top: 10px; /* Espacio encima de los botones bajo los factores */
 }
+
 
