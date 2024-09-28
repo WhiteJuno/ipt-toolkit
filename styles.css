@@ -1,6 +1,6 @@
 /* Estilo general del body */
 body {
-    background-color: #121212; /* Color de fondo oscuro */
+    background-color: #1e1e1e; /* Color de fondo oscuro */
     color: #e0e0e0; /* Color de texto claro */
     font-family: 'Fira Code', monospace; /* Fuente Fira Code */
     margin: 0;
@@ -19,68 +19,51 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: #1e1e1e; /* Fondo del contenedor */
+    border-radius: 25px;
+    background: linear-gradient(315deg, #1b1b1b, #202020);
+    box-shadow:  -6px -6px 13px #0c0c0c,
+                 6px 6px 13px #303030;
 }
 
 /* Estilo para la lista final */
 #lista-final {
     white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
-    border: 1px solid #444; /* Bordes sutiles */
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-    background-color: #2a2a2a; /* Fondo de la lista */
+    padding-right: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 15px;
+    border-radius: 25px;
+    background: linear-gradient(315deg, #1b1b1b, #202020);
+    box-shadow:  -6px -6px 13px #0c0c0c,
+                 6px 6px 13px #303030;
 }
 
 /* Botones */
 button {
     background-color: #7228d9; /* Color del botón */
-    color: #ffffff; /* Color del texto del botón */
+    color: #e0e0e0; /* Color del texto del botón */
     border: none;
     padding: 10px 15px;
     border-radius: 6px;
     cursor: pointer;
     width: 100px;
     transition: background-color 0.3s ease; /* Transición suave */
-    margin-right: 10px; /* Espacio entre botones */
+    margin-right: 6px; /* Espacio entre botones */
+    margin-top: 12px; /* Espacio encima de los botones bajo los factores */
+    font-weight: bold;
+
 }
 
 button:hover {
     background-color: #442b7f; /* Color al pasar el mouse */
 }
 
-/* Estilo para la lista de opciones */
-.opcion {
-    display: inline-block;
-    background-color: #3a3a3a; /* Fondo de cada opción */
-    color: #ffffff; /* Color de texto de las opciones */
-    padding: 8px 12px;
-    border-radius: 4px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Estilo para la lista de opciones */
 .opciones-lista {
     list-style-type: none; /* Elimina viñetas */
     padding: 0; /* Elimina el padding */
     margin: 0; /* Elimina el margen */
-}
-
-/* Estilo para cada opción */
-.opciones-lista .opcion {
-    display: block; /* Cada opción en una nueva línea */
-    background-color: #3a3a3a; /* Fondo de cada opción */
-    color: #ffffff; /* Color de texto de las opciones */
-    padding: 7px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    margin: 5px 0; /* Margen entre opciones */
-    cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
-    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: small;
+    font-weight: bold;
 }
 
 /* Efecto hover para las opciones */
@@ -88,18 +71,14 @@ button:hover {
     background-color: #575757; /* Color al pasar el mouse */
 }
 
-/* Aseguramos que todas las opciones tengan el mismo ancho */
-.opciones-lista .opcion {
-    width: 20%; /* Ancho completo */
-}
 /* Estilo general para el contenedor */
 .container {
     display: flex;
     justify-content: space-between; /* Espacio entre columnas */
     align-items: flex-start; /* Alinear las columnas al inicio */
-    height: 100vh; /* Altura completa de la vista */
+    height: 590px; /* Altura completa de la vista */
     padding: 20px; /* Espaciado interno */
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    max-width: 1100px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
@@ -113,7 +92,11 @@ button:hover {
 }
 
 #opciones-column {
+    margin-top: 15px;
     flex: 0 0 20%;
+    max-height: 335px;
+    overflow: scroll;
+    align-content: center;
 }
 
 #lista-column {
@@ -123,29 +106,25 @@ button:hover {
 
 /* Estilo para el calendario */
 #calendario {
-    width: 100%; /* Ancho completo */
+    width: 90%; /* Ancho completo */
     padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #444; /* Bordes */
+    border-radius: 15px;
+    border: 1px solid #2a2a2a; /* Bordes */
     background: #2a2a2a; /* Fondo del campo */
     color: #e0e0e0; /* Color de texto */
+
+    padding-right: 25;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
-/* Estilo para la lista final */
 #lista-final {
     white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
-    border: 1px solid #444; /* Bordes sutiles */
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 25px;
     margin-top: 20px;
     background-color: #2a2a2a; /* Fondo de la lista */
-}
-
-/* Estilo para la lista de opciones */
-.opciones-lista {
-    list-style-type: none; /* Elimina viñetas */
-    padding: 0; /* Elimina el padding */
-    margin: 0; /* Elimina el margen */
+    font-weight: bold;
 }
 
 /* Estilo para cada opción */
@@ -154,16 +133,10 @@ button:hover {
     background-color: #3a3a3a; /* Fondo de cada opción */
     color: #ffffff; /* Color de texto de las opciones */
     padding: 10px; /* Espaciado interno */
-    border-radius: 4px; /* Bordes redondeados */
+    border-radius: 25px; /* Bordes redondeados */
     margin: 5px 0; /* Margen entre opciones */
     text-align: start; /* Centra el texto */
     cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
     transition: background-color 0.3s ease; /* Transición suave */
-    width: 100%; /* Ancho completo */
+    width: 150px;
 }
-
-.botones {
-    margin-top: 10px; /* Espacio encima de los botones bajo los factores */
-}
-
-
