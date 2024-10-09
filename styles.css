@@ -40,7 +40,7 @@ body {
 
 /* Botones */
 button {
-    background-color: #7228d9; /* Color del botón */
+    background-color: #7538ca; /* Color del botón */
     color: #e0e0e0; /* Color del texto del botón */
     border: none;
     padding: 10px 15px;
@@ -54,8 +54,24 @@ button {
 
 }
 
+#ICO {
+    padding-top: 50px;
+}
+
+.ICO {
+    background-color: #388947;
+}
+
+#NotSoSecretContainer {
+    padding-top: 50px;
+}
+
+.NSS {
+    background-color:#ce9523
+}
+
 button:hover {
-    background-color: #442b7f; /* Color al pasar el mouse */
+    background-color: #151515; /* Color al pasar el mouse */
 }
 
 .opciones-lista {
@@ -89,7 +105,7 @@ button:hover {
 #opciones-column {
     margin-top: 15px;
     flex: 0 0 20%;
-    max-height: 335px;
+    max-height: 570px;
     overflow: scroll;
     align-content: center;
 }
