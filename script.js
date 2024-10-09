@@ -99,12 +99,14 @@ botonEliminarTodas.addEventListener('click', () => {
 });
 
 // Configuración del calendario interactivo usando Flatpickr
+
+
 flatpickr("#calendario", {
     dateFormat: "d/m/Y", // Formato de fecha día/mes/año
     inline: true, // Muestra el calendario directamente en la página
     defaultDate: new Date(), // Fecha por defecto es la actual
-    minDate: "01.01.1900", // Fecha mínima
-    maxDate: "31.12.2099", // Fecha máxima
+    minDate: "09-07-2024", // Fecha mínima
+    maxDate: new Date(), // Fecha máxima
     onChange: function(selectedDates, dateStr, instance) {
         // Extraer solo día/mes de la fecha seleccionada
         const [dia, mes] = dateStr.split('/'); // Separar por "/"
@@ -125,5 +127,225 @@ document.getElementById("copiar").addEventListener("click", function() {
         setTimeout(() => {
             boton.innerText = textoOriginal;
         }, 3000);
+    });
+});
+
+//Botones NOTSOSECRET
+document.getElementById('ADS').addEventListener('click', function() {
+    const texto = "DevMis@39632352#";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('ADS').innerText;
+        document.getElementById('ADS').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('ADS').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('CASP').addEventListener('click', function() {
+    const texto = "Alakay@7";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('CASP').innerText;
+        document.getElementById('CASP').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('CASP').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('CASU').addEventListener('click', function() {
+    const texto = "HC9354A";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('CASU').innerText;
+        document.getElementById('CASU').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('CASU').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('AUU').addEventListener('click', function() {
+    const texto = "NN18002159";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('AUU').innerText;
+        document.getElementById('AUU').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('AUU').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('AU1').addEventListener('click', function() {
+    const texto = "PK75dKBC";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('AU1').innerText;
+        document.getElementById('AU1').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('AU1').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('AU2').addEventListener('click', function() {
+    const texto = "Hz6oQw6Z";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('AU2').innerText;
+        document.getElementById('AU2').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('AU2').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('VNE').addEventListener('click', function() {
+    const texto = "V3944239";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('VNE').innerText;
+        document.getElementById('VNE').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('VNE').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('DOC').addEventListener('click', function() {
+    const texto = "Espana20$";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('DOC').innerText;
+        document.getElementById('DOC').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('DOC').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('EMA').addEventListener('click', function() {
+    const texto = "diego.a.monroy@aexp.com";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('EMA').innerText;
+        document.getElementById('EMA').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('EMA').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+
+//ICO
+document.getElementById('VMNCRN').addEventListener('click', function() {
+    const texto = "SE DEJA VM SIN CRN POR BUZON NO PERSONALIZADO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('VMNCRN').innerText;
+        document.getElementById('VMNCRN').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('VMNCRN').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('VMSCRN').addEventListener('click', function() {
+    const texto = "SE DEJA VM CON CRN";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('VMSCRN').innerText;
+        document.getElementById('VMSCRN').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('VMSCRN').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('DECL').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR CARGO DECLINADO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('DECL').innerText;
+        document.getElementById('DECL').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('DECL').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('DESC').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR CARGO NO RECONOCIDO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('DESC').innerText;
+        document.getElementById('DESC').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('DESC').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('SFK').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR SFK RECIBIDO NO SOLICITADO / NO RECONOCIDO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('SFK').innerText;
+        document.getElementById('SFK').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('SFK').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('P68').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR WALLET NO RECONOCIDO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('P68').innerText;
+        document.getElementById('P68').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('P68').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('IDTO').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR RESET DE CONTRASEÑA DE MYCA NO RECONOCIDO";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('IDTO').innerText;
+        document.getElementById('IDTO').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('IDTO').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('INFO').addEventListener('click', function() {
+    const texto = "SE COMUNICA SUP CM POR INFO GENERAL DE CTA";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('INFO').innerText;
+        document.getElementById('INFO').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('INFO').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+    });
+});
+document.getElementById('CEN').addEventListener('click', function() {
+    const texto = "SE COMUNICA CEN POR INFO / ALERTA, SE VERIFICA SENT INACTIVE MAYOR A TRES MESES, SIN MAS TEMA DE FRAUDE, SE RETIRA PI REMANENTE Y SE PERMITE ACCIONAR. //DMONR";
+    navigator.clipboard.writeText(texto).then(function() {
+        const originalText = document.getElementById('CEN').innerText;
+        document.getElementById('CEN').innerText = "✅";
+        setTimeout(function() {
+            document.getElementById('CEN').innerText = originalText;
+        }, 3000);
+    }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
     });
 });
