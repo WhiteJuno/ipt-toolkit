@@ -10,6 +10,8 @@
 
     <!-- Incluir Flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
 </head>
 <body>
     <h1 class="titulo">IPT Note Toolkit</h1>
@@ -47,6 +49,7 @@
                 <li><div class="opcion">ADDRESS UPDATE</div></li>
             </ul>
         </div>
+
         <div class="column" id="lista-column">
             <div id="lista-final"> placeholder </div>
             <div class="botones">
@@ -54,9 +57,31 @@
                 <button id="reset">Undo</button>
                 <button id="copiar">Copy</button>
             </div>
-        </div>
+                <div id="NotSoSecretContainer">
+                <button id="ADS" class="NSS">ADS / WDE</button>
+                <button id="CASU" class="NSS">CAS User</button>
+                <button id="CASP"class="NSS">CSP / CAS</button>
+                <button id="AUU" class="NSS">Auth U</button>
+                <button id="AU1" class="NSS">Auth P1</button>
+                <button id="AU2" class="NSS">Auth P2</button>
+                <button id="EMA" class="NSS">Emailage</button>
+                <button id="VNE" class="NSS">V-NET</button>
+                <button id="DOC" class="NSS">Doc Check</button>
+            </div>
+            <div id="ICO">
+                <button id="DECL" class="ICO">DECLINADO</button>
+                <button id="DESC" class="ICO">CGO DESC</button>
+                <button id="SFK" class="ICO">SAFEKEY</button>
+                <button id="P68" class="ICO">WALLET</button>
+                <button id="IDTO" class="ICO">MYCA</button>
+                <button id="INFO" class="ICO">OTRO</button>
+                <button id="CEN" class="ICO">S INACTIVE</button>
+                <button id="VMNCRN" class="ICO">VM NO CRN</button>
+                <button id="VMSCRN" class="ICO">VM SÍ CRN</button>
+            </div>
     </div>
 
+    
     <!-- Incluir Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="script.js"></script>
