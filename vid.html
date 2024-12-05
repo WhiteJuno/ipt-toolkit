@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas</title>
+    <style>
+
+        .container {
+            max-width: 200px;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- VID Section -->
+
+        <div id="result">---> VID:</div>
+
+        <div class="buttons">
+            <button onclick="addToVidString('FULL NAME')">FULL NAME</button>
+            <button onclick="addToVidString('OTP SMS')">OTP SMS</button>
+            <button onclick="addToVidString('OTP MAIL')">OTP MAIL</button>
+            <button onclick="addToVidString('CPW')">CPW</button>
+            <button onclick="addToVidString('YOB')">YOB</button>
+            <button onclick="addToVidString('RPC')">RPC</button>
+        </div>
+
+        <div class="actions">
+            <button id="reset-btn" onclick="resetVidString()">Reset</button>
+            <button id="undo-btn" onclick="undoVidLast()">Undo</button>
+            <button id="copy-btn" onclick="copyVidToClipboard()">Copy</button>
+        </div>
+
+        <!-- CIP Section -->
+        <input type="text" id="cip" maxlength="4" placeholder="RATT" oninput="validateCipInput(this)">
+        <div id="cip-message"></div>
+
+        <div class="buttons">
+            <button onclick="setCipOption('OK')">OK</button>
+            <button onclick="setCipOption('NRC')">NRC</button>
+            <button onclick="setCipOption('LOST')">LOST</button>
+            <button onclick="setCipOption('STLN')">STLN</button>
+        </div>
+
+        <div id="cip-result">---> CIP:</div>
+
+        <div class="actions">
+            <button id="reset-cip-btn" onclick="resetCipString()">Reset</button>
+            <button id="copy-cip-btn" onclick="copyCipToClipboard()">Copy</button>
+        </div>
+
+        <!-- Copy Both Section -->
+        <div class="actions">
+            <button id="copy-both-btn" onclick="copyBothToClipboard()">Copy Both</button>
+        </div>
+    </div>
+
+    <script>
+        // VID Section
+        let vidString = "---> VID:";
+        const separator = " +";
+
+        function addToVidString(option) {
+            vidString += ` ${option} OK${separator}`;
+            updateVidResultDisplay();
+        }
+
+        function resetVidString() {
+            vidString = "---> VID:";
+            updateVidResultDisplay();
+        }
+
+        function undoVidLast() {
+            const parts = vidString.split(separator).filter(part => part.trim() !== "");
+            if (parts.length > 1) {
+                parts.pop();
+            }
+            vidString = parts.join(separator) + separator;
+            updateVidResultDisplay();
+        }
+
+        function copyVidToClipboard() {
+            navigator.clipboard.writeText(vidString.slice(0, -separator.length))
+                .then(() => {
+                    const copyBtn = document.getElementById('copy-btn');
+                    const originalText = copyBtn.innerText;
+                    copyBtn.innerText = "Done!";
+                    copyBtn.disabled = true;
+                    setTimeout(() => {
+                        copyBtn.innerText = originalText;
+                        copyBtn.disabled = false;
+                    }, 3000);
+                });
+        }
+
+        function updateVidResultDisplay() {
+            document.getElementById('result').innerText = vidString.slice(0, -separator.length);
+        }
+
+        // CIP Section
+        let cipValue = "";
+        let cipOption = "";
+
+        function validateCipInput(input) {
+            input.value = input.value.replace(/\D/g, ""); // Permitir sólo dígitos
+            const message = document.getElementById('cip-message');
+        }
+
+        function setCipOption(option) {
+            cipValue = document.getElementById('cip').value;
+            const message = document.getElementById('cip-message');
+            if (cipValue.length === 4) {
+                cipOption = option;
+                document.getElementById('cip-result').innerText = `---> CIP: ${cipValue} ${cipOption}`;
+                message.innerText = ""; // Limpia el mensaje
+            }
+        }
+
+        function resetCipString() {
+            cipValue = "";
+            cipOption = "";
+            document.getElementById('cip').value = "";
+            document.getElementById('cip-result').innerText = "---> CIP: ";
+            document.getElementById('cip-message').innerText = ""; // Limpia el mensaje
+        }
+
+        function copyCipToClipboard() {
+            if (cipValue.length === 4 && cipOption) {
+                const cipResult = document.getElementById('cip-result').innerText;
+                navigator.clipboard.writeText(cipResult)
+                    .then(() => {
+                        const copyCipBtn = document.getElementById('copy-cip-btn');
+                        const originalText = copyCipBtn.innerText;
+                        copyCipBtn.innerText = "Done!";
+                        copyCipBtn.disabled = true;
+                        setTimeout(() => {
+                            copyCipBtn.innerText = originalText;
+                            copyCipBtn.disabled = false;
+                        }, 3000);
+                    });
+            }
+        }
+
+        // Copy Both
+        function copyBothToClipboard() {
+            const vidResult = document.getElementById('result').innerText;
+            const cipResult = document.getElementById('cip-result').innerText;
+            const bothResults = `${vidResult}\n${cipResult}`;
+
+            navigator.clipboard.writeText(bothResults)
+                .then(() => {
+                    const copyBothBtn = document.getElementById('copy-both-btn');
+                    const originalText = copyBothBtn.innerText;
+                    copyBothBtn.innerText = "Done!";
+                    copyBothBtn.disabled = true;
+                    setTimeout(() => {
+                        copyBothBtn.innerText = originalText;
+                        copyBothBtn.disabled = false;
+                    }, 3000);
+                });
+        }
+    </script>
+</body>
+</html>
