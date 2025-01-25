@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Texto</title>
+
+
+    <script>
+        let storedText = "";
+
+        function saveText() {
+            const inputField = document.getElementById('adsInput');
+            const saveButton = document.getElementById('saveButton');
+            const regex = /^[a-zA-Z0-9]{1,10}$/; // Solo letras y números, máximo 10 caracteres
+            if (regex.test(inputField.value)) {
+                storedText = inputField.value;
+                saveButton.textContent = '✅';
+                saveButton.disabled = true;
+            } else {
+                saveButton.textContent = '❌';
+                setTimeout(() => {
+                    saveButton.textContent = 'OK';
+                }, 2000);
+            }
+        }
+
+        function copyToClipboard() {
+            const textToCopy = '\n    ---   //' + storedText + ' GFPS   ---';
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Texto copiado al portapapeles: ' + textToCopy);
+            }).catch(err => {
+                alert('Error al copiar el texto');
+            });
+        }
+
+        function toUpperCaseInput() {
+            const inputField = document.getElementById('adsInput');
+            inputField.value = inputField.value.toUpperCase();
+        }
+    </script>
+
+
+</head>
+<body>
+
+
+    <input type="text" id="adsInput" maxlength="10" placeholder="ADS" oninput="toUpperCaseInput()">
+    <button id="saveButton" onclick="saveText()">OK</button>
+
+
+    <button onclick="copyToClipboard()">Copiar al portapapeles</button>
+</body>
+</html>

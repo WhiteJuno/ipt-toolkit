@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPT Notes Toolkit</title>
+    <!-- Enlace a Google Fonts para Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Incluir Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
+</head>
+<body>
+    <h1 class="titulo">IPT Note Toolkit</h1>
+
+    <div class="container">
+        <div class="column" id="calendario-column">
+            <input type="text" id="calendario" placeholder="Selecciona una fecha" readonly>
+        </div>
+        
+        <div class="column" id="opciones-column">
+            <ul class="opciones-lista">
+                <li><div class="opcion">OTP (SAFEKEY)</div></li>
+                <li><div class="opcion">NA (MYCA)</div></li>
+                <li><div class="opcion">TEMP PASSWORD</div></li>
+                <li><div class="opcion">TEMP SECURITY CODE</div></li>
+                <li><div class="opcion">MAIL UPDATE</div></li>
+                <li><div class="opcion">TELS UPDATE</div></li>
+                <li><div class="opcion">CARD REPLACEMENT</div></li>
+                <li><div class="opcion">PWP REDEMPTIONS</div></li>
+                <li><div class="opcion">CPW CREADO</div></li>
+                <li><div class="opcion">WELCOME PAPERLESS</div></li>
+                <li><div class="opcion">G-PAY ADDED</div></li>
+                <li><div class="opcion">G-PAY UNABLE TO ADD</div></li>
+                <li><div class="opcion">APPLE PAY ADDED</div></li>
+                <li><div class="opcion">ADDED SUPPLE</div></li>
+                <li><div class="opcion">LOC INCREASE</div></li>
+                <li><div class="opcion">ADDRESS UPDATE</div></li>
+            </ul>
+        </div>
+
+        <div class="column" id="lista-column">
+            <div id="lista-final"> placeholder </div>
+            <div class="botones">
+                <button id="eliminar-todas">Reset</button>
+                <button id="reset">Undo</button>
+                <button id="copiar">Copy</button>
+    </div>
+
+    
+    <!-- Incluir Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>
+
+<style>
+
+body {
+    background-color: #1e1e1e; /* Color de fondo oscuro */
+    color: #e0e0e0; /* Color de texto claro */
+    font-family: 'Fira Code', monospace; /* Fuente Fira Code */
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 1.5rem; /* Tamaño pequeño */
+    color: #ffffff; /* Color blanco para modo oscuro */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-family: 'Fira Code', monospace; /* Fuente Fira Code */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: auto;
+    border-radius: 25px;
+    background: linear-gradient(315deg, #1b1b1b, #202020);
+    box-shadow:  -6px -6px 13px #0c0c0c,
+                 6px 6px 13px #303030;
+}
+
+/* Estilo para la lista final */
+#lista-final {
+    white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
+    padding-right: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 15px;
+    border-radius: 25px;
+    background: linear-gradient(315deg, #1b1b1b, #202020);
+    box-shadow:  -6px -6px 13px #0c0c0c,
+                 6px 6px 13px #303030;
+}
+
+/* Botones */
+button {
+    background-color: #7538ca; /* Color del botón */
+    color: #e0e0e0; /* Color del texto del botón */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100px;
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin-right: 6px; /* Espacio entre botones */
+    margin-top: 12px; /* Espacio encima de los botones bajo los factores */
+    font-weight: bold;
+
+}
+
+#ICO {
+    padding-top: 50px;
+}
+
+.ICO {
+    background-color: #388947;
+}
+
+#NotSoSecretContainer {
+    padding-top: 50px;
+}
+
+.NSS {
+    background-color:#ce9523
+}
+
+button:hover {
+    background-color: #151515; /* Color al pasar el mouse */
+}
+
+.opciones-lista {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margen */
+    font-size: small;
+    font-weight: bold;
+}
+
+/* Efecto hover para las opciones */
+.opciones-lista .opcion:hover {
+    background-color: #575757; /* Color al pasar el mouse */
+}
+
+/* Estilo general para el contenedor */
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre columnas */
+    align-items: flex-start; /* Alinear las columnas al inicio */
+    height: 590px; /* Altura completa de la vista */
+    padding: 20px; /* Espaciado interno */
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+#calendario-column {
+    flex: 0 0 20%;
+}
+
+#opciones-column {
+    margin-top: 15px;
+    flex: 0 0 20%;
+    max-height: 570px;
+    overflow: scroll;
+    align-content: center;
+}
+
+#lista-column {
+    flex: 0 0 350px;
+    text-align:start
+}
+
+/* Estilo para el calendario */
+#calendario {
+    width: 90%; /* Ancho completo */
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #2a2a2a; /* Bordes */
+    background: #2a2a2a; /* Fondo del campo */
+    color: #e0e0e0; /* Color de texto */
+
+    padding-right: 25;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#lista-final {
+    white-space: pre-wrap; /* Mantiene el formato de espacio en blanco */
+    padding: 15px;
+    border-radius: 25px;
+    margin-top: 20px;
+    background-color: #2a2a2a; /* Fondo de la lista */
+    font-weight: bold;
+}
+
+/* Estilo para cada opción */
+.opciones-lista .opcion {
+    display: block; /* Cada opción en una nueva línea */
+    background-color: #3a3a3a; /* Fondo de cada opción */
+    color: #ffffff; /* Color de texto de las opciones */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    margin: 5px 0; /* Margen entre opciones */
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
+    transition: background-color 0.3s ease; /* Transición suave */
+    width: 150px;
+}
+</style>
+
+<script>
+    // Variable para almacenar la fecha seleccionada (solo día/mes) en el calendario
+let fechaSeleccionada = obtenerFechaActual(); // Por defecto es la fecha actual
+let contadorOpciones = {}; // Objeto para llevar el conteo de las opciones
+let entradas = []; // Array para almacenar las entradas
+
+// Función para obtener la fecha actual en formato DD/MM
+function obtenerFechaActual() {
+    const hoy = new Date();
+    const dia = hoy.getDate().toString().padStart(2, '0');
+    const mes = (hoy.getMonth() + 1).toString().padStart(2, '0'); // Enero es 0, por eso sumamos 1
+    return `${dia}/${mes}`;
+}
+
+// Establecer la fecha actual en el div de la lista final
+const listaFinal = document.getElementById('lista-final');
+const fechaActual = obtenerFechaActual();
+listaFinal.textContent = `--->    FACTORES AL ${fechaActual}    <---`;
+
+// Firma final
+const firma = '\n    ---   //DMONR GFPS   ---';
+
+// Referencias a las opciones
+const opciones = document.querySelectorAll('.opcion');
+
+// Función para agregar una opción con la fecha seleccionada a la lista final
+opciones.forEach(opcion => {
+    opcion.addEventListener('click', () => {
+        const clave = `${fechaSeleccionada} ${opcion.textContent}`;
+        
+        // Incrementar el contador para la opción
+        if (!contadorOpciones[clave]) {
+            contadorOpciones[clave] = 0;
+        }
+        contadorOpciones[clave]++;
+
+        // Crear la entrada sin mostrar x1
+        let entrada = contadorOpciones[clave] > 1 ? `${clave} x${contadorOpciones[clave]}` : `${clave}`;
+        entradas.push(clave);
+
+        // Actualizar la lista final
+        actualizarListaFinal();
+    });
+});
+
+// Botón de "Reset"
+const botonReset = document.getElementById('reset');
+botonReset.addEventListener('click', () => {
+    if (entradas.length > 0) {
+        const ultimaEntrada = entradas.pop();
+        
+        // Disminuir el contador de la última entrada eliminada
+        if (contadorOpciones[ultimaEntrada] > 1) {
+            contadorOpciones[ultimaEntrada]--;
+        } else {
+            delete contadorOpciones[ultimaEntrada];
+        }
+
+        // Actualizar la lista final
+        actualizarListaFinal();
+    }
+});
+
+// Botón para eliminar todas las opciones
+const botonEliminarTodas = document.getElementById('eliminar-todas');
+botonEliminarTodas.addEventListener('click', () => {
+    // Vaciar el array de entradas y resetear contadores
+    entradas = [];
+    contadorOpciones = {};
+    actualizarListaFinal();
+});
+
+// Función para actualizar el contenido de la lista final
+function actualizarListaFinal() {
+    let contenido = `--->    FACTORES AL ${fechaActual}    <---`;
+    for (const clave in contadorOpciones) {
+        contenido += contadorOpciones[clave] > 1 ? `\n${clave} x${contadorOpciones[clave]}` : `\n${clave}`;
+    }
+    contenido += firma;
+    listaFinal.textContent = contenido;
+}
+
+document.getElementById("copiar").addEventListener("click", function() {
+    const texto = listaFinal.innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+        const boton = this;
+        const textoOriginal = boton.innerText;
+        boton.innerText = "✅";
+        setTimeout(() => {
+            boton.innerText = textoOriginal;
+        }, 3000);
+    });
+});
+
+// Configuración del calendario interactivo usando Flatpickr
+flatpickr("#calendario", {
+    dateFormat: "d/m/Y", // Formato de fecha día/mes/año
+    inline: true, // Muestra el calendario directamente en la página
+    defaultDate: new Date(), // Fecha por defecto es la actual
+    minDate: "09-07-2024", // Fecha mínima
+    maxDate: new Date(), // Fecha máxima
+    onChange: function(selectedDates, dateStr, instance) {
+        // Extraer solo día/mes de la fecha seleccionada
+        const [dia, mes] = dateStr.split('/'); // Separar por "/"
+        fechaSeleccionada = `${dia}/${mes}`; // Solo tomar día y mes
+        console.log("Fecha seleccionada (día/mes): ", fechaSeleccionada);
+    }
+});
+
+</script>
