@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Final Notes Addon</title>
+    </html>
+    <body>
+        <div class="container" id="Final-note-container">
+           <div class="column" id="notes-column">
+                <p class="titulo" id="FNoteT">Final Note</p>
+
+                <table>
+                    <tr class="table">
+                        <td>Rec Scanner:</td>
+                        <td><button id="SREC" class="FNL">Si</button></td>
+                        <td><button id="SNREC" class="FNL">No</button></td>
+                        <td><button id="NOSC" class="FNL">Sin</button></td>
+                    </tr>
+                        <tr class="table">
+                        <td>Rec Scanner:</td>
+                        <td><button id="SFAC" class="FNL">Si</button></td>
+                        <td><button id="NFAC" class="FNL">No</button></td>
+                        <td><button id="SNFAC" class="FNL">Sin</button></td>
+                    </tr>
+                </table>
+
+                <button id="undo-note" style="margin-top:10px;">Undo</button>
+                <button id="reset-notes" style="margin-top:10px;">Reset</button>
+                <button id="copy-notes" style="margin-top:10px;">Copy</button>
+
+                <ul id="notes-list" style="margin-top:10px;"></ul>
+
+                <div class="row" id="notes-container">
+                <!-- Final notes will be added here -->
+                </div>
+            </div>
+        </div>
+<script>
+
+//FINAL NOTE LOGIC -------------------------------------------------------------
+
+    // Button info mapping
+    const buttonInfo = {
+        SREC: "- Si reconoce scanner",
+        SNREC: "- No reconoce scanner",
+        NOSC: "- Sin scanneer, reporta cargo",
+        SFAC: "- Si reconoce factores",
+        NFAC: "- No reconoce factores",
+        SNFAC: "- Sin factores de riesgo",
+    };
+
+    const notesList = document.getElementById('notes-list');
+    const notes = [];
+
+    Object.keys(buttonInfo).forEach(id => {
+        document.getElementById(id).addEventListener('click', function() {
+            if (!notes.includes(buttonInfo[id])) {
+                notes.push(buttonInfo[id]);
+                renderNotes();
+            }
+        });
+    });
+
+    function renderNotes() {
+        notesList.innerHTML = '';
+        notes.forEach(note => {
+            const li = document.createElement('li');
+            li.textContent = note;
+            notesList.appendChild(li);
+        });
+    }
+
+    document.getElementById('copy-notes').addEventListener('click', function() {
+        if (notes.length > 0) {
+            const text = notes.join('\n');
+            navigator.clipboard.writeText(text);
+        }
+    });
+
+    document.getElementById('undo-note').addEventListener('click', function() {
+        if (notes.length > 0) {
+            notes.pop();
+            renderNotes();
+        }
+    });
+
+    document.getElementById('reset-notes').addEventListener('click', function() {
+        notes.length = 0;
+        renderNotes();
+    });
+
+</script>
+</html>
