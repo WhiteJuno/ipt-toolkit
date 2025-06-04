@@ -152,14 +152,46 @@
         if (e.target === this) this.style.display = 'none';
     };
 
-    // Genera un número aleatorio de 11 dígitos como string
+
+
+
+
+
+
+
+
+    // Forzar mayúsculas y bloquear caracteres especiales en el campo usuario -----!!!ADD!!!-----
+    const folioUserInput = document.getElementById('folio-user');
+    folioUserInput.setAttribute('maxlength', '8');
+    folioUserInput.addEventListener('input', function () {
+        // Solo permite letras mayúsculas y números, y máximo 8 caracteres
+        this.value = this.value
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, '')
+        .slice(0, 8);
+}); 
+
+    // Genera el número de 11 dígitos como string         -----!!!REPLACE randomFolioNumber!!!-----
     function randomFolioNumber() {
-        let num = '';
-        for (let i = 0; i < 11; i++) {
-            num += Math.floor(Math.random() * 10);
-        }
-        return num;
+        const now = new Date();
+        const year = String(now.getFullYear()).slice(-1); // Último dígito del año
+        const month = String(now.getMonth() + 1).padStart(2, '0'); // Mes dos dígitos
+        const day = String(now.getDate()).padStart(2, '0'); // Día dos dígitos
+        const hour = String(now.getHours()).padStart(2, '0'); // Hora 24h dos dígitos
+        const minute = String(now.getMinutes()).padStart(2, '0'); // Minutos a dos dígitos
+        const second = String(now.getSeconds()).padStart(2, '0'); // Segundos a dos dígitos
+        return `${year}${month}${day}${hour}${minute}${second}`;
     }
+    // Genera el número de 11 dígitos como string        -----!!!REPLACE randomFolioNumber!!!-----
+
+
+
+    
+
+
+
+
+
 
     // Formatea la fecha y hora en el formato requerido: DD/MM/AA y HH:MMAM/PM (6 dígitos)
     function getFormattedDateTime() {
@@ -184,7 +216,7 @@
     // Al hacer click en "Done", genera el folio y lo muestra
     document.getElementById('generate-folio').onclick = function() {
     const tipo = document.getElementById('folio-type').value;
-    const usuario = document.getElementById('folio-user').value.trim();
+    const usuario = document.getElementById('folio-user').value.trim().toUpperCase();
     const mrpl = document.getElementById('folio-mrpl').value === 'SI' ? 'MRPL' : '';
 
     // No permitir generación si el usuario está vacío
@@ -193,6 +225,34 @@
         document.getElementById('folio-user').focus();
         return;
     }
+
+
+
+
+
+
+
+
+
+
+
+    // No permitir generación si el usuario no tiene exactamente 8 caracteres     !!!ADD!!!
+    if (usuario.length !== 8) {
+        alert('USUARIO INVÁLIDO.');
+        document.getElementById('folio-user').focus();
+        return;
+    }
+    // No permitir generación si el usuario no tiene exactamente 8 caracteres     !!!ADD!!!
+
+
+
+
+
+
+
+
+
+
 
     const folioNum = randomFolioNumber();
     const { date, time } = getFormattedDateTime();
